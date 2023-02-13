@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+<link rel="stylesheet" type="text/css" href="StyleSheet2.css">
+  <style>
+    #video {
+      display: none;
+    }
+    #link {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="header">HI CRUSH ♡＼(￣▽￣)／♡</h1>
+<p id="message">Will You Be My Valentine?</p>
+<a id="link" href="https://gifft.me/l#pziuqbKPcDHxAjBCkreB" target="_blank">click for kisses!</a>
+<script>
+  document.getElementById("yes").addEventListener("click", function() {
+    document.getElementById("header").innerHTML = "Love Wins!";
+    document.getElementById("message").innerHTML = "Yes, I am feeling the love!";
+  });
+</script>
+<button id="yes">Yes :D</button>
+  <button id="no">No :(</button>
+  <div id="video">
+    <video src="rose.mp4" controls="" autoplay="" width="600" height="400" style="opacity: 1;"></video>
+  </div>
+  <a href="#" id="link">https://gifft.me/l#pziuqbKPcDHxAjBCkreB</a>
+  <div id="images"></div>
+</body>
+<script src="Script3.js">
+  let counter = 0;
+  let images = [];
+  // Add your images here
+  let noButton = document.getElementById("no");
+  let yesButton = document.getElementById("yes");
+  let video = document.getElementById("video");
+  let link = document.getElementById("link");
+  let imagesDiv = document.getElementById("images");
+
+  noButton.addEventListener("click", function () {
+  counter++;
+  if (counter <= images.length) {
+    let newImg = document.createElement("img");
+    newImg.src = images[counter - 1];
+    imagesDiv.appendChild(newImg);
+    noButton.style.left = counter * 20 + "px";
+    noButton.style.top = counter * 20 + "px";
+  }
+});
+
+  yesButton.addEventListener("click", function () {
+    video.style.display = "none";
+    video.style.width = maxWidth + "px";
+    video.style.height = maxHeight + "px";
+    video.style.left = (window.innerWidth - maxWidth) / 2 + "px";
+    video.style.top = (window.innerHeight - maxHeight) / 2 + "px";
+    link.style.display = "block";
+  });
+</script>
+</html>
